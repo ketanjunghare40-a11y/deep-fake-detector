@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Deepfake Image Detector</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">🤖 AI Deepfake Detector</div>
+    <nav>
+        <a href="/">Home</a>
+        <a href="#about">About</a>
+        <a href="#detect">Detection</a>
+    </nav>
+</header>
+
+<section class="hero">
+
+    <div class="hero-text">
+
+        <h1>Detect Deepfake Images Using Artificial Intelligence</h1>
+
+        <p>
+            <h3>Upload any image and let our AI model analyze whether it is
+            <b>Real</b> or <b>AI Generated</b>.</h3>
+        </p>
+
+        <a href="#detect">
+            <button>Start Detection</button>
+        </a>
+
+    </div>
+
+</section>
+
+<section id="detect">
+
+<div class="card">
+
+    <h2>📷 Upload Image</h2>
+
+    <form method="POST" enctype="multipart/form-data">
+
+        <input type="file" name="image" required>
+
+        <button type="submit">
+            Detect Image
+        </button>
+
+    </form>
+
+    {% if image %}
+
+        <img src="{{ image }}" class="preview">
+
+        <div class="result">
+
+            <h2>{{ prediction }}</h2>
+
+            <h3>Confidence : {{ confidence }}%</h3>
+
+        </div>
+
+    {% endif %}
+
+</div>
+
+</section>
+
+<section id="about">
+
+<h2 class="title">About This Project</h2>
+
+<div class="about">
+
+<div class="box">
+<h3>⚡ Fast Detection</h3>
+<p>Upload an image and receive results within seconds.</p>
+</div>
+
+<div class="box">
+<h3>🧠 AI Powered</h3>
+<p>Uses a deep learning model trained for image classification.</p>
+</div>
+
+<div class="box">
+<h3>🔒 Secure</h3>
+<p>Your uploaded images stay within the application and are not shared.</p>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>
+© 2026 Deepfake Image Detection System | Developed with Python, Flask & AI 
+</p>
+
+</footer>
+
+</body>
